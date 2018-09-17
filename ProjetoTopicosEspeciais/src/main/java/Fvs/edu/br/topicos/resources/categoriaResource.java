@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import Fvs.edu.br.topicos.domain.categoria;
+import Fvs.edu.br.topicos.domain.Categoria;
 
 @RestController
 @RequestMapping(value="/categorias")
 public class categoriaResource {
 
 	@RequestMapping(method=RequestMethod.GET)
-	public List<categoria> listar() {
-		categoria cat1 = new categoria(1 , "bombril");
-		categoria cat2 = new categoria(2, "Detergente");
+	public List<Categoria> listar() {
+		Categoria cat1 = new Categoria(1 , "bombril");
+		Categoria cat2 = new Categoria(2, "Detergente");
 		
-		List<categoria> lista = new ArrayList<>();
+		List<Categoria> lista = new ArrayList<>();
 		lista.add(cat1);
 		lista.add(cat2);
 		return lista;

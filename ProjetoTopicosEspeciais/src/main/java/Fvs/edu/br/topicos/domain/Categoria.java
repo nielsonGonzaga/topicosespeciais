@@ -2,17 +2,25 @@ package Fvs.edu.br.topicos.domain;
 
 import java.io.Serializable;
 
-public class categoria implements Serializable {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+@Entity
+
+public class Categoria implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	
-	public categoria() {
+	public Categoria() {
 		
 	}
 
-	public categoria(Integer id, String nome) {
+	public Categoria(Integer id, String nome) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -50,7 +58,7 @@ public class categoria implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		categoria other = (categoria) obj;
+		Categoria other = (Categoria) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
