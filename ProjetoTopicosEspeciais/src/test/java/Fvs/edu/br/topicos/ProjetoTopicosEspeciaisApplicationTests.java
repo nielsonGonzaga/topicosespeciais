@@ -1,4 +1,4 @@
-package Fvs.edu.br.topicos;
+package fvs.edu.br.topicos;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

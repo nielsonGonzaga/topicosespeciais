@@ -1,4 +1,4 @@
-package Fvs.edu.br.topicos.resources;
+package fvs.edu.br.topicos.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import Fvs.edu.br.topicos.domain.Categoria;
-import Fvs.edu.br.topicos.services.CategoriaService;
+import fvs.edu.br.topicos.domain.Categoria;
+import fvs.edu.br.topicos.service.CategoriaService;
 
 @RestController
 @RequestMapping(value="/categorias")
-public class categoriaResource {
-
+public class CategoriaResource {
+	
 	@Autowired
 	private CategoriaService service;
 	
@@ -24,5 +24,4 @@ public class categoriaResource {
 		
 		return ResponseEntity.ok().body(obj);
 	}
-	
 }

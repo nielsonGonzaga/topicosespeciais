@@ -4,13 +4,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>Fvs.edu.br.topicos</groupId>
+	<groupId>fvs.edu.br.topicos</groupId>
 	<artifactId>ProjetoTopicosEspeciais</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>ProjetoTopicosEspeciais</name>
-	<description>projeto desenvolvido na diciplina topicos especiais fvs</description>
+	<description>Projeto desenvolvido na disciplina de tópicos especiais FVS</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -52,8 +52,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
-
-
 	</dependencies>
 
 	<build>
