@@ -1,36 +1,50 @@
-package Fvs.edu.br.topicos.domain;
+package fvs.edu.br.topicos.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
-import Fvs.edu.br.topicos.enums.TipoCliente;
+import fvs.edu.br.topicos.enums.TipoCliente;
 
 @Entity
-public class cliente implements Serializable{
+public class Cliente implements Serializable{
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	private String email;
-	private String cpfoucnpj;
+	private String cpfOuCnpj;
 	private TipoCliente tipo;
 	
-	public cliente() {
+	@OneToMany
+	private List<Endereco> endereco = new ArrayList<>();
+	
+	@ElementCollection
+	@CollectionTable(name="TELEFONE")
+	private Set<String> telefones = new HashSet<>();
+	
+	public Cliente() {
 		
 	}
 
-	public cliente(Integer id, String nome, String email, String cpfoucnpj, TipoCliente tipo) {
+	public Cliente(Integer id, String nome, String email, String cpfOuCnpj, TipoCliente tipo) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
-		this.cpfoucnpj = cpfoucnpj;
+		this.cpfOuCnpj = cpfOuCnpj;
 		this.tipo = tipo;
 	}
 
@@ -58,12 +72,12 @@ public class cliente implements Serializable{
 		this.email = email;
 	}
 
-	public String getCpfoucnpj() {
-		return cpfoucnpj;
+	public String getCpfOuCnpj() {
+		return cpfOuCnpj;
 	}
 
-	public void setCpfoucnpj(String cpfoucnpj) {
-		this.cpfoucnpj = cpfoucnpj;
+	public void setCpfOuCnpj(String cpfOuCnpj) {
+		this.cpfOuCnpj = cpfOuCnpj;
 	}
 
 	public TipoCliente getTipo() {
@@ -90,7 +104,7 @@ public class cliente implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		cliente other = (cliente) obj;
+		Cliente other = (Cliente) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -98,7 +112,22 @@ public class cliente implements Serializable{
 			return false;
 		return true;
 	}
-	
+
+	public List<Endereco> getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(List<Endereco> endereco) {
+		this.endereco = endereco;
+	}
+
+	public Set<String> getTelefones() {
+		return telefones;
+	}
+
+	public void setTelefones(Set<String> telefones) {
+		this.telefones = telefones;
+	}
 	
 	
 }

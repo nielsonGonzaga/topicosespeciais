@@ -1,7 +1,6 @@
-package Fvs.edu.br.topicos.enums;
+package fvs.edu.br.topicos.enums;
 
 public enum TipoCliente {
-
 	PESSOAFISICA(1),
 	PESSOAJURIDICA(2);
 	
@@ -10,5 +9,4 @@ public enum TipoCliente {
 	TipoCliente(int tipoPessoa){
 		this.tipoPessoa = tipoPessoa;
 	}
-	
 }
