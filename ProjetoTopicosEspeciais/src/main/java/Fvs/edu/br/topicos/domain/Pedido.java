@@ -19,7 +19,8 @@ public class Pedido implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	@JsonFormat(pattern="dd/mm/yyyy hh:mm")
+	
+	@JsonFormat(pattern="dd/MM/yyyy HH:mm")
 	private Date instante;
 	
 	
@@ -31,9 +32,5 @@ public class Pedido implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="endereco_de_entrega_id")
 	private Endereco enderecoEntrega;
-	
-	public Pedido() {
-		
-	}
-	
+
 }
