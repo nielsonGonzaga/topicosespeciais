@@ -6,8 +6,6 @@ import javax.persistence.Entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import fvs.edu.br.topicos.enums.EstadoPagamento;
-
 @Entity
 public class PagamentoComBoleto extends Pagamento{
 	private static final long serialVersionUID = 1L;
@@ -21,12 +19,10 @@ public class PagamentoComBoleto extends Pagamento{
 		
 	}
 
-	public PagamentoComBoleto(Integer id, EstadoPagamento estado, Pedido pedido
-	,Date dataVencimento, Date dataPagamento)
-	{
+	public PagamentoComBoleto(Integer id, Integer estado, Pedido pedido, Date dataVencimento, Date dataPagamento) {
 		super(id, estado, pedido);
-		this.dataPagamento = dataPagamento;
 		this.dataVencimento = dataVencimento;
+		this.dataPagamento = dataPagamento;
 	}
 
 	public Date getDataVencimento() {
@@ -46,5 +42,4 @@ public class PagamentoComBoleto extends Pagamento{
 	}
 	
 	
-
 }
