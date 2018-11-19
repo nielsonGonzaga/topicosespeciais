@@ -1,4 +1,4 @@
-package fvs.edu.br.topicos.service;
+package fvs.edu.br.topicos.services;
 
 import java.util.Optional;
 
@@ -11,12 +11,13 @@ import javassist.tools.rmi.ObjectNotFoundException;
 
 @Service
 public class ClienteService {
-
+	
 	@Autowired
-	private ClienteRepository repository;
-
-	public Cliente buscar(Integer id) throws ObjectNotFoundException {
-		Optional<Cliente> obj = repository.findById(id);
+	private ClienteRepository repo;
+	
+	public Cliente buscar(Integer id) 
+			throws ObjectNotFoundException{
+		Optional<Cliente> obj = repo.findById(id);
 		return obj.orElse(null);
 	}
 }

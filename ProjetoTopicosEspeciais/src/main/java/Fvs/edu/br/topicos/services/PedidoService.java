@@ -1,4 +1,4 @@
-package fvs.edu.br.topicos.service;
+package fvs.edu.br.topicos.services;
 
 import java.util.Optional;
 
@@ -11,11 +11,25 @@ import javassist.tools.rmi.ObjectNotFoundException;
 
 @Service
 public class PedidoService {
+	
 	@Autowired
-	private PedidoRepository repository;
-
-	public Pedido buscar(Integer id) throws ObjectNotFoundException {
-		Optional<Pedido> obj = repository.findById(id);
+	private PedidoRepository repo;
+	
+	public Pedido buscar(Integer id) 
+	throws ObjectNotFoundException{
+		Optional<Pedido> obj = repo.findById(id);
 		return obj.orElse(null);
 	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
